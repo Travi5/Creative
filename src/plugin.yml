@@ -1,0 +1,16 @@
+name: Creative-Handler
+description: A custom plugin for the Creative world
+author: Travi5
+main: me.travi5plays.creative.CreativePlayerListener
+version: 0.2
+commands:
+  creative:
+    description: Generic Command
+    usage: /<command>
+  c:
+    description: Generic Command
+    usage: /<command>  
+permissions:
+  Creative.Handle.mod:
+    description: Allows commands
+    default: false
