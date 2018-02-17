@@ -386,11 +386,11 @@ implements Listener
 				}, 20L);
 			}
 			if (e.getLine(1).equalsIgnoreCase("[Creative]") && checkWorlds(e.getPlayer().getWorld().getName())) {
-				
+
 				e.setLine(1,ChatColor.GREEN + "Welcome");
 				e.setLine(2,"Press4 commands");
-					
-				
+
+
 			}
 		}
 		//Gamemode signs
@@ -420,11 +420,6 @@ implements Listener
 					}
 				}
 			}
-			if (e.getLine(1).equalsIgnoreCase(ChatColor.GREEN + "Welcome") && e.getLine(2).equalsIgnoreCase("Press4 commands")) {
-				UserHelp(e.getPlayer());
-
-			}
-
 		}
 	}
 
@@ -449,16 +444,22 @@ implements Listener
 					}
 				}
 				//Gamemode signs
-				if (checkWorlds(e.getPlayer().getWorld().getName()) 
-						&& sign.getLine(1).contains(ChatColor.GREEN + "Gamemode")) { //gamemode change signs
-					if (sign.getLine(2).equalsIgnoreCase("Survial")) {
-						p.setGameMode(GameMode.SURVIVAL);
+				if (checkWorlds(e.getPlayer().getWorld().getName())) {
+					if (sign.getLine(1).contains(ChatColor.GREEN + "Gamemode")) { //gamemode change signs
+						if (sign.getLine(2).equalsIgnoreCase("Survial")) {
+							p.setGameMode(GameMode.SURVIVAL);
+						}
+						if (sign.getLine(2).equalsIgnoreCase("Creative")) {
+							p.setGameMode(GameMode.CREATIVE);
+						}
 					}
-					if (sign.getLine(2).equalsIgnoreCase("Creative")) {
-						p.setGameMode(GameMode.CREATIVE);
+					if (sign.getLine(1).equalsIgnoreCase(ChatColor.GREEN + "Welcome") && sign.getLine(2).equalsIgnoreCase("Press4 commands")) {
+						UserHelp(e.getPlayer());
+
 					}
-				}
-			}
+
+				}//if in world
+			}//if sign
 		}
 	}
 
